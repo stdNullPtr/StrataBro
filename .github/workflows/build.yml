@@ -1,10 +1,9 @@
-name: Build and Release
-
+name: Build
 on:
   push:
     branches: [ "master" ]
   pull_request:
-      branches: [ "master" ]
+    branches: [ "master" ]
   
 permissions:
   contents: read
@@ -41,7 +40,10 @@ jobs:
         run: ${{env.QT_ROOT_DIR}}\bin\qt-cmake.bat -G Ninja -S . -B build
 
       - name: Cmake build
-        run: cmake --build build
+        run: cmake --build build --config Release
+
+      - name: Cmake deploy dependencies
+        run: ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-translations build\Release\StrataBro.exe
 
       - name: List contents of the build directory
         run: ls -R build
@@ -51,6 +53,6 @@ jobs:
         with:
           name: StrataBro
           path: |
-              build\*.exe
-              build\*.dll
+              build\Release*.exe
+              build\Release*.dll
           retention-days: 1
