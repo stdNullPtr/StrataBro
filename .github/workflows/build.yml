@@ -1,0 +1,58 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+      branches: [ "master" ]
+  
+permissions:
+  contents: read
+
+concurrency:
+  group: build-windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      # Install Qt via community action
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.2"
+          host: "windows"
+          target: "desktop"
+          arch: "win64_msvc2022_64"
+          setup-python: "false"
+          cache: "true"
+          dir: ${{ runner.temp }}
+
+      # Set up the MSVC developer environment so msbuild is available
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cmake generate
+        working-directory: ${{ github.workspace }}
+        run: ${{env.QT_ROOT_DIR}}\bin\qt-cmake.bat -G Ninja -S . -B out
+
+      - name: Cmake build
+        working-directory: ${{ github.workspace }}
+        run: cmake --build out
+
+      - name: List contents of the build directory
+        run: ls -R ${{ runner.temp }}\build
+
+      # Upload the compiled .exe as an artifact so other jobs can retrieve it
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: StrataBro
+          path: x64\Release\StrataBro.exe
