@@ -43,7 +43,7 @@ jobs:
         run: cmake --build build --config Release
 
       - name: Cmake deploy dependencies
-        run: ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-translations build\Release\StrataBro.exe
+        run: ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-translations build\StrataBro.exe
 
       - name: List contents of the build directory
         run: ls -R build
