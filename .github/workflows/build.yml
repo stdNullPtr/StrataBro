@@ -37,10 +37,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cmake generate
-        run: ${{env.QT_ROOT_DIR}}\bin\qt-cmake.bat -G Ninja -S . -B build
+        run: ${{env.QT_ROOT_DIR}}\bin\qt-cmake.bat -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
 
       - name: Cmake build
-        run: cmake --build build --config Release
+        run: cmake --build build
 
       - name: Cmake deploy dependencies
         run: ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-translations build\StrataBro.exe
@@ -53,6 +53,6 @@ jobs:
         with:
           name: StrataBro
           path: |
-              build\Release*.exe
-              build\Release*.dll
+              build\*.exe
+              build\*.dll
           retention-days: 1
