@@ -29,6 +29,11 @@ jobs:
           cache: "true"
           dir: ${{ runner.temp }}
           
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
       - name: Checkout
         uses: actions/checkout@v4
 
