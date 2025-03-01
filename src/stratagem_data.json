@@ -1,0 +1,322 @@
+[
+  {
+    "stratagem": "<None>",
+    "code": ""
+  },
+  {
+    "stratagem": "MG-43 Machine Gun",
+    "code": "Down Left Down Up Right"
+  },
+  {
+    "stratagem": "APW-1 Anti-Materiel Rifle",
+    "code": "Down Left Right Up Down"
+  },
+  {
+    "stratagem": "M-105 Stalwart",
+    "code": "Down Left Down Up Up Left"
+  },
+  {
+    "stratagem": "EAT-17 Expendable Anti-Tank",
+    "code": "Down Down Left Up Right"
+  },
+  {
+    "stratagem": "GR-8 Recoilless Rifle",
+    "code": "Down Left Right Right Left"
+  },
+  {
+    "stratagem": "FLAM-40 Flamethrower",
+    "code": "Down Left Up Down Up"
+  },
+  {
+    "stratagem": "AC-8 Autocannon",
+    "code": "Down Left Down Up Up Right"
+  },
+  {
+    "stratagem": "MG-206 Heavy Machine Gun",
+    "code": "Down Left Up Down Down"
+  },
+  {
+    "stratagem": "RL-77 Airburst Rocket Launcher",
+    "code": "Down Up Up Left Right"
+  },
+  {
+    "stratagem": "MLS-4X Commando",
+    "code": "Down Left Up Down Right"
+  },
+  {
+    "stratagem": "RS-422 Railgun",
+    "code": "Down Right Down Up Left Right"
+  },
+  {
+    "stratagem": "FAF-14 Spear",
+    "code": "Down Down Up Down Down"
+  },
+  {
+    "stratagem": "StA-X3 W.A.S.P. Launcher",
+    "code": "Down Down Up Down Right"
+  },
+  {
+    "stratagem": "Orbital Gatling Barrage",
+    "code": "Right Down Left Up Up"
+  },
+  {
+    "stratagem": "Orbital Airburst Strike",
+    "code": "Right Right Right"
+  },
+  {
+    "stratagem": "Orbital 120mm HE Barrage",
+    "code": "Right Right Down Left Right Down"
+  },
+  {
+    "stratagem": "Orbital 380mm HE Barrage",
+    "code": "Right Down Up Up Left Down Down"
+  },
+  {
+    "stratagem": "Orbital Walking Barrage",
+    "code": "Right Down Right Down Right Down"
+  },
+  {
+    "stratagem": "Orbital Laser",
+    "code": "Right Down Up Right Down"
+  },
+  {
+    "stratagem": "Orbital Napalm Barrage",
+    "code": "Right Right Down Left Right Up"
+  },
+  {
+    "stratagem": "Orbital Railcannon Strike",
+    "code": "Right Up Down Down Right"
+  },
+  {
+    "stratagem": "Eagle Strafing Run",
+    "code": "Up Right Right"
+  },
+  {
+    "stratagem": "Eagle Airstrike",
+    "code": "Up Right Down Right"
+  },
+  {
+    "stratagem": "Eagle Cluster Bomb",
+    "code": "Up Right Down Down Right"
+  },
+  {
+    "stratagem": "Eagle Napalm Airstrike",
+    "code": "Up Right Down Up"
+  },
+  {
+    "stratagem": "LIFT-850 Jump Pack",
+    "code": "Down Up Up Down Up"
+  },
+  {
+    "stratagem": "Eagle Smoke Strike",
+    "code": "Up Right Up Down"
+  },
+  {
+    "stratagem": "Eagle 110mm Rocket Pods",
+    "code": "Up Right Up Left"
+  },
+  {
+    "stratagem": "Eagle 500kg Bomb",
+    "code": "Up Right Down Down Down"
+  },
+  {
+    "stratagem": "M-102 Fast Recon Vehicle",
+    "code": "Left Down Right Down Right Down Up"
+  },
+  {
+    "stratagem": "Orbital Precision Strike",
+    "code": "Right Right Up"
+  },
+  {
+    "stratagem": "Orbital Gas Strike",
+    "code": "Right Right Down Right"
+  },
+  {
+    "stratagem": "Orbital EMS Strike",
+    "code": "Right Right Left Down"
+  },
+  {
+    "stratagem": "Orbital Smoke Strike",
+    "code": "Right Right Down Up"
+  },
+  {
+    "stratagem": "E/MG-101 HMG Emplacement",
+    "code": "Down Up Left Right Right Left"
+  },
+  {
+    "stratagem": "FX-12 Shield Generator Relay",
+    "code": "Down Down Left Right Left Right"
+  },
+  {
+    "stratagem": "A/ARC-3 Tesla Tower",
+    "code": "Down Up Right Up Left Right"
+  },
+  {
+    "stratagem": "MD-6 Anti-Personnel Minefield",
+    "code": "Down Left Up Right"
+  },
+  {
+    "stratagem": "B-1 Supply Pack",
+    "code": "Down Left Down Up Up Down"
+  },
+  {
+    "stratagem": "GL-21 Grenade Launcher",
+    "code": "Down Left Up Left Down"
+  },
+  {
+    "stratagem": "LAS-98 Laser Cannon",
+    "code": "Down Left Down Up Left"
+  },
+  {
+    "stratagem": "MD-I4 Incendiary Mines",
+    "code": "Down Left Left Down"
+  },
+  {
+    "stratagem": "AX/LAS-5 \"Guard Dog\" Rover",
+    "code": "Down Up Left Up Right Right"
+  },
+  {
+    "stratagem": "SH-20 Ballistic Shield Backpack",
+    "code": "Down Left Down Down Up Left"
+  },
+  {
+    "stratagem": "ARC-3 Arc Thrower",
+    "code": "Down Right Down Up Left Left"
+  },
+  {
+    "stratagem": "MD-17 Anti-Tank Mines",
+    "code": "Down Left Up Up"
+  },
+  {
+    "stratagem": "LAS-99 Quasar Cannon",
+    "code": "Down Down Up Left Right"
+  },
+  {
+    "stratagem": "SH-32 Shield Generator Pack",
+    "code": "Down Up Left Right Left Right"
+  },
+  {
+    "stratagem": "MD-8 Gas Mines",
+    "code": "Down Left Left Right"
+  },
+  {
+    "stratagem": "A/MG-43 Machine Gun Sentry",
+    "code": "Down Up Right Right Up"
+  },
+  {
+    "stratagem": "A/G-16 Gatling Sentry",
+    "code": "Down Up Right Left"
+  },
+  {
+    "stratagem": "A/M-12 Mortar Sentry",
+    "code": "Down Up Right Right Down"
+  },
+  {
+    "stratagem": "AX/AR-23 \"Guard Dog\"",
+    "code": "Down Up Left Up Right Down"
+  },
+  {
+    "stratagem": "A/AC-8 Autocannon Sentry",
+    "code": "Down Up Right Up Left Up"
+  },
+  {
+    "stratagem": "A/MLS-4X Rocket Sentry",
+    "code": "Down Up Right Right Left"
+  },
+  {
+    "stratagem": "A/M-23 EMS Mortar Sentry",
+    "code": "Down Up Right Down Right"
+  },
+  {
+    "stratagem": "EXO-45 Patriot Exosuit",
+    "code": "Left Down Right Up Left Down Down"
+  },
+  {
+    "stratagem": "EXO-49 Emancipator Exosuit",
+    "code": "Left Down Right Up Left Down Up"
+  },
+  {
+    "stratagem": "TX-41 Sterilizer",
+    "code": "Down Left Up Down Left"
+  },
+  {
+    "stratagem": "AX/TX-13 \"Guard Dog\" Dog Breath",
+    "code": "Down Up Left Up Right Up"
+  },
+  {
+    "stratagem": "SH-51 Directional Shield",
+    "code": "Down Up Left Right Up Up"
+  },
+  {
+    "stratagem": "E/AT-12 Anti-Tank Emplacement",
+    "code": "Down Up Left Right Right Right"
+  },
+  {
+    "stratagem": "A/FLAM-40 Flame Sentry",
+    "code": "Down Up Right Down Up Up"
+  },
+  {
+    "stratagem": "B-100 Portable Hellbomb",
+    "code": "Down Right Up Up Up"
+  },
+  {
+    "stratagem": "Reinforce",
+    "code": "Up Down Right Left Up"
+  },
+  {
+    "stratagem": "SoS Beacon",
+    "code": "Up Down Right Up"
+  },
+  {
+    "stratagem": "Resupply",
+    "code": "Down Down Up Right"
+  },
+  {
+    "stratagem": "Eagle Rearm",
+    "code": "Up Up Left Up Right"
+  },
+  {
+    "stratagem": "SSSD Delivery",
+    "code": "Down Down Down Up Up"
+  },
+  {
+    "stratagem": "Prospecting Drill",
+    "code": "Down Down Left Right Down Down"
+  },
+  {
+    "stratagem": "Super Earth Flag",
+    "code": "Down Up Down Up"
+  },
+  {
+    "stratagem": "Hellbomb",
+    "code": "Down Up Left Down Up Right Down Up"
+  },
+  {
+    "stratagem": "Upload Data",
+    "code": "Left Right Up Up Up"
+  },
+  {
+    "stratagem": "Seismic Probe",
+    "code": "Up Up Left Right Down Down"
+  },
+  {
+    "stratagem": "Orbital Illumination Flare",
+    "code": "Right Right Left Left"
+  },
+  {
+    "stratagem": "SEAF Artillery",
+    "code": "Right Up Up Down"
+  },
+  {
+    "stratagem": "Dark Fluid Vessel",
+    "code": "Up Left Right Down Up Up"
+  },
+  {
+    "stratagem": "Tectonic Drill",
+    "code": "Up Down Up Down Up Down"
+  },
+  {
+    "stratagem": "Hive Breaker Drill",
+    "code": "Left Up Down Right Down Down"
+  }
+]
