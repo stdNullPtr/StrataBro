@@ -3,8 +3,10 @@
 ## Introduction
 StrataBro is a simple tool built with Qt Widgets, designed for the game Helldivers 2.  
 The purpose of the tool is to automate stratagem callouts in the game, by sending keypresses to the game.  
-  
-![StrataBro_MainWindow.png](.github/img/StrataBro_MainWindow.png)
+
+![StrataBro_MainWindow](https://github.com/user-attachments/assets/d45e43c5-238d-4a7f-8bdc-fc118c846108)
+
+https://github.com/user-attachments/assets/81c4ccf1-c0dd-4b0b-bf3a-e7b774d0585c
 
 TODO
 
