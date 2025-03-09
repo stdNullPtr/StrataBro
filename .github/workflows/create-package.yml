@@ -1,4 +1,4 @@
-name: Create Package Manually
+name: Create Package
 on:
   workflow_dispatch:
     inputs:
@@ -7,9 +7,11 @@ on:
         required: true
         default: 'master'
         type: string
+  release:
+    types: [created]
 
 permissions:
-  contents: read
+  contents: write # Needed to upload assets to release
 
 jobs:
   create-package:
@@ -34,7 +36,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.branch }}
+          # Use the specified branch for manual dispatch, or the default branch for release events
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
+
+      - name: Get release version
+        id: get_version
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=dev" >> $GITHUB_OUTPUT
+          fi
 
       - name: Cmake generate and build
         run: |
@@ -48,9 +62,39 @@ jobs:
           Copy-Item "build\Release\StrataBro.exe" -Destination $deployDir
           & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime $deployDir\StrataBro.exe
 
+      - name: Create version info file
+        run: |
+          $version = "${{ steps.get_version.outputs.VERSION }}"
+          $commitSha = "${{ github.sha }}".Substring(0, 8)
+          $buildDate = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+          
+          $content = @"
+          Version: $version
+          Commit: $commitSha
+          Build Date: $buildDate
+          "@
+          
+          Set-Content -Path "$deployDir/build_info.txt" -Value $content
+
+      - name: Create release zip
+        if: ${{ github.event_name == 'release' }}
+        run: |
+          Compress-Archive -Path "deploy\*" -DestinationPath "StrataBro-${{ steps.get_version.outputs.VERSION }}.zip" -Force
+
+      - name: Upload to release
+        if: ${{ github.event_name == 'release' }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./StrataBro-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_name: StrataBro-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_content_type: application/zip
+
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
-          name: StrataBro
+          name: StrataBro-${{ steps.get_version.outputs.VERSION }}
           path: deploy
           retention-days: 30
