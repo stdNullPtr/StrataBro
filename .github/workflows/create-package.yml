@@ -48,13 +48,9 @@ jobs:
           Copy-Item "build\Release\StrataBro.exe" -Destination $deployDir
           & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime $deployDir\StrataBro.exe
 
-      - name: Create ZIP package
-        run: |
-          Compress-Archive -Path "deploy\*" -DestinationPath "StrataBro.zip" -Force
-
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
           name: StrataBro
-          path: StrataBro.zip
+          path: deploy
           retention-days: 30
