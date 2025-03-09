@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.2.0...StrataBro-v1.3.0) (2025-03-09)
+
+
+### Features
+
+* extend package script ([762c2f6](https://github.com/stdNullPtr/StrataBro/commit/762c2f6c37d98e45a0a984f92442cfc66cddccbd))
+
+
+### Continuous Integration
+
+* fix typo in workflow ([3b438c1](https://github.com/stdNullPtr/StrataBro/commit/3b438c1f96da876b17d3e2cb653d99ec28791bde))
+* fix typo in workflow ([217d52f](https://github.com/stdNullPtr/StrataBro/commit/217d52f20df99a9737805905138c5406cfdf2a2e))
+
 ## [1.2.0](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.1.0...StrataBro-v1.2.0) (2025-03-09)
 
 
