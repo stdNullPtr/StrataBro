@@ -1,4 +1,4 @@
-name: Create Package
+name: Create Package Manually
 on:
   workflow_dispatch:
     inputs:
