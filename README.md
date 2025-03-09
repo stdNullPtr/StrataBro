@@ -10,6 +10,11 @@ https://github.com/user-attachments/assets/81c4ccf1-c0dd-4b0b-bf3a-e7b774d0585c
 
 TODO
 
+## Release process and versioning
+Versioning is done using the release please workflow as a source of truth for the version.  
+It creates a VERSION.txt that is used across project by CMake and CMake generates a header file with the version that is used in the actual code.  
+When the release PR is merged - a new GitHub release is created and the version should be automatically handled throughout the build system.
+
 ## How to build
 ### Prerequisites
 TODO

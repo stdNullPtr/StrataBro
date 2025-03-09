@@ -11,10 +11,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: create-package-${{ github.workflow }}-${{ github.event.inputs.branch }}
-  cancel-in-progress: true
-
 jobs:
   create-package:
     runs-on: windows-latest
@@ -29,7 +25,6 @@ jobs:
           arch: "win64_msvc2022_64"
           setup-python: "false"
           cache: "true"
-          dir: ${{ runner.temp }}
 
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
@@ -41,85 +36,25 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
 
-      - name: Get version
-        id: get_version
+      - name: Cmake generate and build
         run: |
-          $version = Get-Content -Path "VERSION.txt" -Raw
-          $version = $version.Trim()
-          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
-          
-          $shortSha = "${{ github.sha }}".Substring(0, 7)
-          echo "SHORT_SHA=$shortSha" >> $env:GITHUB_OUTPUT
+          cmake -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -S . -B build
+          cmake --build build --config Release
 
-      - name: Cmake generate
-        run: cmake -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -S . -B build
-
-      - name: Cmake build
-        run: cmake --build build --config Release
-
-      - name: Run deployment target
-        run: cmake --build build --target WinDeploy --config Release
-        continue-on-error: true
-
-      - name: Fallback deploy dependencies
-        if: ${{ failure() || success() }}
+      - name: Deploy with windeployqt
         run: |
-          $deployDir = "build\deploy"
-          # Create deploy directory if it doesn't exist
-          if (-not (Test-Path $deployDir)) {
-            New-Item -ItemType Directory -Path $deployDir -Force
-            Copy-Item "build\Release\StrataBro.exe" -Destination $deployDir
-            & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime --no-translations $deployDir\StrataBro.exe
-          }
-
-      - name: Create version info file
-        run: |
-          $version = "${{ steps.get_version.outputs.VERSION }}"
-          if (-not $version) { $version = "unknown" }
-          
-          $shortSha = "${{ steps.get_version.outputs.SHORT_SHA }}"
-          $buildDate = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-          $branch = "${{ github.event.inputs.branch }}"
-          
-          $content = @"
-          Version: $version
-          Commit: $shortSha
-          Build Date: $buildDate
-          Branch: $branch
-          "@
-          
-          $deployDir = "build\deploy"
-          if (Test-Path $deployDir) {
-            Set-Content -Path "$deployDir\build_info.txt" -Value $content
-          } else {
-            Set-Content -Path "build\Release\build_info.txt" -Value $content
-          }
+          $deployDir = "deploy"
+          New-Item -ItemType Directory -Path $deployDir -Force
+          Copy-Item "build\Release\StrataBro.exe" -Destination $deployDir
+          & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime $deployDir\StrataBro.exe
 
       - name: Create ZIP package
         run: |
-          $deployDir = "build\deploy"
-          $version = "${{ steps.get_version.outputs.VERSION }}"
-          if (-not $version) { $version = "dev" }
-          
-          if (Test-Path $deployDir) {
-            Compress-Archive -Path "$deployDir\*" -DestinationPath "StrataBro-$version.zip" -Force
-          } else {
-            Compress-Archive -Path "build\Release\*" -DestinationPath "StrataBro-$version.zip" -Force
-          }
+          Compress-Archive -Path "deploy\*" -DestinationPath "StrataBro.zip" -Force
 
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
-          name: StrataBro-Package
-          path: StrataBro-*.zip
-          retention-days: 30
-
-      - name: Upload loose files artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: StrataBro-Files
-          path: |
-            build/deploy
-            build/Release
-          if-no-files-found: warn
+          name: StrataBro
+          path: StrataBro.zip
           retention-days: 30
