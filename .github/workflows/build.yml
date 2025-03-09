@@ -4,7 +4,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  
+
 permissions:
   contents: read
 
@@ -27,7 +27,7 @@ jobs:
           setup-python: "false"
           cache: "true"
           dir: ${{ runner.temp }}
-          
+
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -47,7 +47,7 @@ jobs:
 
       - name: List contents of the build directory
         run: ls -R build\Release
-        
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
