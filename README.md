@@ -34,7 +34,7 @@ ${QT_ROOT_DIR}\bin\windeployqt.exe --release --no-compiler-runtime --no-translat
 ```
 5. You can find the executable at *build\Release\StrataBro.exe*
 
-Note: have a look at [this workflow](.github/workflows/build.yml) for reference on how a build is done.
+Note: have a look at [this workflow](.github/workflows/build-verification.yml) for reference on how a build is done.
 
 ## How to use
 TODO

@@ -1,21 +1,20 @@
-name: Build
+name: Build Verification
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
 
 permissions:
   contents: read
 
 concurrency:
-  group: build-windows-${{ github.ref }}
+  group: verify-build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-windows:
+  verify-build:
     runs-on: windows-latest
-
     steps:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -42,15 +41,11 @@ jobs:
       - name: Cmake build
         run: cmake --build build --config Release
 
-      - name: Cmake deploy dependencies
-        run: ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime --no-translations build\Release\StrataBro.exe
-
-      - name: List contents of the build directory
-        run: ls -R build\Release
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: StrataBro
-          path: build\Release
-          retention-days: 1
+      - name: Verify executable was created
+        run: |
+          if (Test-Path "build\Release\StrataBro.exe") {
+            Write-Host "✅ Build successful - executable created"
+          } else {
+            Write-Host "❌ Build failed - executable not found"
+            exit 1
+          }
