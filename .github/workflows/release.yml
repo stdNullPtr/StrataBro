@@ -71,7 +71,7 @@ jobs:
           Compress-Archive -Path build/deploy/* -DestinationPath "StrataBro-${{ steps.get_version.outputs.VERSION }}.zip"
 
       - name: Upload build to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.release.tag_name }}
           files: "StrataBro-${{ steps.get_version.outputs.VERSION }}.zip"
