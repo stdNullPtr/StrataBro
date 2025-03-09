@@ -66,20 +66,18 @@ jobs:
             $details = "StrataBro.exe was successfully built"
             $fileSize = (Get-Item "build\Release\StrataBro.exe").Length / 1MB
             $fileSize = [math]::Round($fileSize, 2)
-            $buildTime = "${{ job.duration }}"
           } else {
             $result = "❌ Failure"
             $details = "StrataBro.exe was not found"
             $fileSize = "N/A"
-            $buildTime = "${{ job.duration }}"
           }
           
           $summary = @"
           ## Build Verification Results
           
-          | Status | Details | File Size | Build Time |
-          | ------ | ------- | --------- | ---------- |
-          | $result | $details | ${fileSize} MB | $buildTime |
+          | Status | Details | File Size |
+          | ------ | ------- | --------- |
+          | $result | $details | ${fileSize} MB |
           
           ### Build Information
           - Commit: ${{ github.sha }}
