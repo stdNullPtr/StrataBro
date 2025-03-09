@@ -51,7 +51,8 @@ if (WIN32)
             COMMAND "${WINDEPLOYQT_EXECUTABLE}"
             --no-translations
             --no-system-d3d-compiler
-            --no-compiler-runtime
+            --no-quick-import
+            --compiler-runtime
             "${CMAKE_BINARY_DIR}/deploy/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
 
             COMMAND ${CMAKE_COMMAND} -E echo "Deployed application is ready at: ${CMAKE_BINARY_DIR}/deploy/$<TARGET_FILE_NAME:${PROJECT_NAME}>"

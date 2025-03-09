@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget* parent)
 {
 	ui.setupUi(this);
 
-	setWindowTitle(QString("StrataBro v%1").arg(APP_VERSION_STR));
+	setWindowTitle(QString("StrataBro %1").arg(APP_VERSION_STR));
 
 	connect(ui.dialSpeedSlider, &QSlider::valueChanged, this, [=](int value)
 	{
