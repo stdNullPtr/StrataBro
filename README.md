@@ -1,5 +1,12 @@
 # StrataBro
 
+## TL;DR
+1. Before you use this you have to set your stratagem keybinds to the arrow keys
+2. Navigate to the realease page https://github.com/stdNullPtr/StrataBro/releases
+3. Download the latest release .zip ![image](https://github.com/user-attachments/assets/2bc90104-814c-4844-b5f1-479891a58cfd)
+4. Extract and run the .exe
+5. Select the stratagems that you want to automate, they will be at the respective keybinds as stated in the text on the left of the drop boxes
+
 ## Introduction
 StrataBro is a simple tool built with Qt Widgets, designed for the game Helldivers 2.  
 The purpose of the tool is to automate stratagem callouts in the game, by sending keypresses to the game.  
