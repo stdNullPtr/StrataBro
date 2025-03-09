@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.1.0...StrataBro-v1.2.0) (2025-03-09)
+
+
+### Features
+
+* extend local deploy script ([d53e821](https://github.com/stdNullPtr/StrataBro/commit/d53e82140d28990ee9ccbd9769acd07db332a26b))
+* extend package script ([bcfbd33](https://github.com/stdNullPtr/StrataBro/commit/bcfbd335766be8cbd95638cb6f42a0fc286b5935))
+* simplify create package ([ddfa3a1](https://github.com/stdNullPtr/StrataBro/commit/ddfa3a13e7154481790af514b2d912d65d23df44))
+* simplify release process ([d074dd3](https://github.com/stdNullPtr/StrataBro/commit/d074dd33475c9673581e45c6d0a89908b02673f2))
+
 ## [1.1.0](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.0.0...StrataBro-v1.1.0) (2025-03-09)
 
 
