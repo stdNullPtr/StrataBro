@@ -60,7 +60,7 @@ jobs:
           $deployDir = "deploy"
           New-Item -ItemType Directory -Path $deployDir -Force
           Copy-Item "build\Release\StrataBro.exe" -Destination $deployDir
-          & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-compiler-runtime $deployDir\StrataBro.exe
+          & ${{env.QT_ROOT_DIR}}\bin\windeployqt.exe --release --no-quick-import --compiler-runtime --no-translations --no-system-d3d-compiler $deployDir\StrataBro.exe
 
       - name: Create version info file
         run: |
