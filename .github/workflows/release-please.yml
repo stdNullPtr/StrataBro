@@ -2,8 +2,7 @@ name: Release Please
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 permissions:
   contents: write
