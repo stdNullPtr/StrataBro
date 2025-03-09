@@ -8,7 +8,7 @@ on:
         default: 'master'
         type: string
   release:
-    types: [ created ]
+    types: [ published ]
 
 permissions:
   contents: write # Needed to upload assets to release
