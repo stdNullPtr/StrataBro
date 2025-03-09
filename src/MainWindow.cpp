@@ -10,16 +10,17 @@
 #include <windows.h>
 #include <Version.h>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget* parent)
+	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
 	setWindowTitle(QString("StrataBro v%1").arg(APP_VERSION_STR));
 
-	connect(ui.dialSpeedSlider, &QSlider::valueChanged, this, [=](int value) {
+	connect(ui.dialSpeedSlider, &QSlider::valueChanged, this, [=](int value)
+	{
 		ui.dialSpeedSpinBox->setValue(value);
-		});
+	});
 
 	const char* dialogErrorMsgTemplate = "Unexpected error while loading stratagem settings: %1";
 
@@ -47,11 +48,14 @@ MainWindow::MainWindow(QWidget *parent)
 		completer->setCompletionMode(QCompleter::PopupCompletion);
 		stratagemComboBox->setCompleter(completer);
 
-		connect(stratagemComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [=](int index) {
-			qDebug() << "Stratagem" << comboBoxCounter << "changed to" << stratagemList[index].name_ << "that has code" << stratagemList[index].code_;
+		connect(stratagemComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [=](int index)
+		{
+			qDebug() << "Stratagem" << comboBoxCounter << "changed to" << stratagemList[index].name_ << "that has code"
+				<< stratagemList[index].code_;
 
 			QVariant data = stratagemComboBox->itemData(index);
-			if (!data.isValid()) {
+			if (!data.isValid())
+			{
 				qDebug() << "No valid item data found in combobox" << index;
 				return;
 			}
@@ -75,7 +79,7 @@ MainWindow::MainWindow(QWidget *parent)
 				hotkey,
 				MOD_CONTROL,
 				'0' + hotkey); // hack, properly retrieve the vkCode one day instead of this ASCII building
-			});
+		});
 
 		for (qsizetype stratagemCounter = 0; stratagemCounter < stratagemList.size(); stratagemCounter++)
 		{
@@ -85,30 +89,34 @@ MainWindow::MainWindow(QWidget *parent)
 
 		QSettings settings("stdnullptr", "StrataBro");
 		int savedIndex = settings.value(QString("comboIndex_%1").arg(comboBoxCounter), 0).toInt();
-		if (savedIndex >= 0 && savedIndex < stratagemComboBox->count()) {
+		if (savedIndex >= 0 && savedIndex < stratagemComboBox->count())
+		{
 			stratagemComboBox->setCurrentIndex(savedIndex);
 		}
 	}
 }
 
 MainWindow::~MainWindow()
-{}
+{
+}
 
 bool MainWindow::nativeEvent(const QByteArray& eventType, void* message, qintptr* result)
 {
 	MSG* msg = static_cast<MSG*>(message);
 
-	if (msg->message == WM_HOTKEY) {
+	if (msg->message == WM_HOTKEY)
+	{
 		int hotkeyId = static_cast<int>(msg->wParam); // Get hotkey ID
 		DWORD vk = HIWORD(msg->lParam); // Virtual key code
 
 		qDebug() << "Hotkey Pressed! ID:" << hotkeyId << "Virtual Key:" << vk;
 
-		if (hotkeyId >= 1 && hotkeyId <= MAX_STRATAGEM_HOTKEYS) {
-
+		if (hotkeyId >= 1 && hotkeyId <= MAX_STRATAGEM_HOTKEYS)
+		{
 			// -1 because they have zero-based names but the keybinds start from 1
 			QComboBox* stratagemComboBox = findChild<QComboBox*>(QString("stratagemComboBox_%1").arg(hotkeyId - 1));
-			if (!stratagemComboBox) {
+			if (!stratagemComboBox)
+			{
 				qDebug() << "No combo box found for hotkey" << hotkeyId;
 				return false;
 			}

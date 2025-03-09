@@ -12,7 +12,8 @@ namespace Utils
 	QList<Stratagem> LoadStratagems()
 	{
 		QFile file(":/data/stratagem_data.json");
-		if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
 			qDebug() << "Failed to open JSON file!";
 			return {};
 		}
@@ -21,15 +22,17 @@ namespace Utils
 		file.close();
 
 		QJsonDocument doc = QJsonDocument::fromJson(jsonData);
-		if (!doc.isArray()) {
+		if (!doc.isArray())
+		{
 			qDebug() << "Invalid JSON format!";
-			return{};
+			return {};
 		}
 
 		QJsonArray jsonArray = doc.array();
 		QList<Stratagem> stratagemList{};
 
-		for (const QJsonValue& value : jsonArray) {
+		for (const QJsonValue& value : jsonArray)
+		{
 			QJsonObject obj = value.toObject();
 			QString name = obj["stratagem"].toString();
 			QString code = obj["code"].toString();

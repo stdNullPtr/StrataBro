@@ -1,267 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindowClass</class>
- <widget class="QMainWindow" name="MainWindowClass">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>440</width>
-    <height>427</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>StrataBro</string>
-  </property>
-  <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QFrame" name="verticalFrame">
-      <property name="frameShape">
-       <enum>QFrame::Shape::Panel</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Select your stratagem preset</string>
-         </property>
+    <class>MainWindowClass</class>
+    <widget class="QMainWindow" name="MainWindowClass">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>440</width>
+                <height>427</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>StrataBro</string>
+        </property>
+        <widget class="QWidget" name="centralWidget">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                    <widget class="QFrame" name="verticalFrame">
+                        <property name="frameShape">
+                            <enum>QFrame::Shape::Panel</enum>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
+                            <item>
+                                <widget class="QLabel" name="label">
+                                    <property name="text">
+                                        <string>Select your stratagem preset</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLabel" name="label_2">
+                                    <property name="text">
+                                        <string>Stratagems will be called with the respective key combinations shown
+                                            below
+                                        </string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLabel" name="label_12">
+                                    <property name="text">
+                                        <string>Set stratagem call keybinds to arrow keys</string>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QFrame" name="verticalFrame_2">
+                        <property name="frameShape">
+                            <enum>QFrame::Shape::Panel</enum>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_2">
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_4">
+                                            <property name="text">
+                                                <string>Ctrl + 1</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_0">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_3">
+                                            <property name="text">
+                                                <string>Ctrl + 2</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_1">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_5">
+                                            <property name="text">
+                                                <string>Ctrl + 3</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_2">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_6">
+                                            <property name="text">
+                                                <string>Ctrl + 4</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_3">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_10">
+                                            <property name="text">
+                                                <string>Ctrl + 5</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_4">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_7">
+                                            <property name="text">
+                                                <string>Ctrl + 6</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_5">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_8">
+                                            <property name="text">
+                                                <string>Ctrl + 7</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_6">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,1">
+                                    <item>
+                                        <widget class="QLabel" name="label_9">
+                                            <property name="text">
+                                                <string>Ctrl + 8</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QComboBox" name="stratagemComboBox_7">
+                                            <property name="editable">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </item>
+                        </layout>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QFrame" name="horizontalFrame_9">
+                        <property name="frameShape">
+                            <enum>QFrame::Shape::Panel</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1,0">
+                            <item>
+                                <widget class="QLabel" name="label_11">
+                                    <property name="text">
+                                        <string>Time between inputs</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QSlider" name="dialSpeedSlider">
+                                    <property name="minimum">
+                                        <number>20</number>
+                                    </property>
+                                    <property name="maximum">
+                                        <number>100</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>20</number>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Qt::Orientation::Horizontal</enum>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QSpinBox" name="dialSpeedSpinBox">
+                                    <property name="frame">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>Qt::AlignmentFlag::AlignCenter</set>
+                                    </property>
+                                    <property name="readOnly">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="buttonSymbols">
+                                        <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+                                    </property>
+                                    <property name="suffix">
+                                        <string>ms</string>
+                                    </property>
+                                    <property name="minimum">
+                                        <number>20</number>
+                                    </property>
+                                    <property name="maximum">
+                                        <number>100</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>20</number>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </widget>
+                </item>
+            </layout>
         </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Stratagems will be called with the respective key combinations shown below</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>Set stratagem call keybinds to arrow keys</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QFrame" name="verticalFrame_2">
-      <property name="frameShape">
-       <enum>QFrame::Shape::Panel</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Ctrl + 1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_0">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Ctrl + 2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_1">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Ctrl + 3</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_2">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Ctrl + 4</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_3">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>Ctrl + 5</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_4">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Ctrl + 6</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_5">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Ctrl + 7</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_6">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,1">
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>Ctrl + 8</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="stratagemComboBox_7">
-           <property name="editable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QFrame" name="horizontalFrame_9">
-      <property name="frameShape">
-       <enum>QFrame::Shape::Panel</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1,0">
-       <item>
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>Time between inputs</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="dialSpeedSlider">
-         <property name="minimum">
-          <number>20</number>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="value">
-          <number>20</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="dialSpeedSpinBox">
-         <property name="frame">
-          <bool>true</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-         <property name="buttonSymbols">
-          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-         </property>
-         <property name="suffix">
-          <string>ms</string>
-         </property>
-         <property name="minimum">
-          <number>20</number>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="value">
-          <number>20</number>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
-  </widget>
- </widget>
- <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+    </widget>
+    <layoutdefault spacing="6" margin="11"/>
+    <resources/>
+    <connections/>
 </ui>
