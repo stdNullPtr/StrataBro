@@ -9,6 +9,7 @@
       "prerelease": false,
       "include-v-in-tag": true,
       "version-file": "VERSION.txt",
+      "changelog-path": ".github/CHANGELOG.md",
       "changelog-sections": [
         {"type": "feat", "section": "Features", "hidden": false},
         {"type": "fix", "section": "Bug Fixes", "hidden": false},
