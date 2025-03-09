@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.3.0...StrataBro-v1.3.1) (2025-03-09)
+
+
+### Continuous Integration
+
+* remove compiler runtime from final artifact ([da9feca](https://github.com/stdNullPtr/StrataBro/commit/da9feca85a5e510026d9f584a3359976f9c1b011))
+
 ## [1.3.0](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.2.0...StrataBro-v1.3.0) (2025-03-09)
 
 
