@@ -33,7 +33,7 @@ jobs:
           arch: x64
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cmake generate
         run: cmake -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -S . -B build
