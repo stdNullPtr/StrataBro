@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.3.1...StrataBro-v1.3.2) (2025-08-12)
+
+
+### Continuous Integration
+
+* **deps:** bump actions/checkout from 4 to 5 ([#8](https://github.com/stdNullPtr/StrataBro/issues/8)) ([02a39af](https://github.com/stdNullPtr/StrataBro/commit/02a39af6f05731fbbffcb9d852664948c7620c9e))
+
 ## [1.3.1](https://github.com/stdNullPtr/StrataBro/compare/StrataBro-v1.3.0...StrataBro-v1.3.1) (2025-03-09)
 
 
