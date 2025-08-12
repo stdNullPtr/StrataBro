@@ -34,7 +34,7 @@ jobs:
           arch: x64
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Use the specified branch for manual dispatch, or the default branch for release events
           ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
