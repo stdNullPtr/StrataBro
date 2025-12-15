@@ -93,7 +93,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload package artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: StrataBro-${{ steps.get_version.outputs.VERSION }}
           path: deploy
